@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferences</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Enter Your Preferences</h1>
+        <form action="/perform_analysis" method="post">
+            <label for="criteria">Keywords (comma-separated):</label>
+            <input type="text" id="criteria" name="criteria" required>
+            <label for="num_reviews">Number of Reviews:</label>
+            <input type="number" id="num_reviews" name="num_reviews" value="10" required>
+            <button type="submit">Analyze</button>
+        </form>
+        <button class="back-button" onclick="window.location.href='/'">Back to Home</button>
+    </div>
+</body>
+
+</html>

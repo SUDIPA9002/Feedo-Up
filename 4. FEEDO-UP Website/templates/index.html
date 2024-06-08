@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Product Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Flipkart Product Analyzer</h1>
+        <form id="analyze-form">
+            <input type="text" name="url" placeholder="Enter Flipkart URL" required>
+            <button type="submit">Analyze</button>
+        </form>
+        <div id="progress-bar" class="progress-bar">
+            <div id="progress" class="progress"></div>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script>
+        document.getElementById('analyze-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = event.target;
+            const url = form.url.value;
+            const progressBar = document.getElementById('progress');
+            const resultDiv = document.getElementById('result');
+
+            fetch('/analyze', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    url
+                })
+            }).then(response => response.json()).then(data => {
+                resultDiv.innerHTML = data.message;
+            });
+
+            let interval = setInterval(() => {
+                fetch('/progress')
+                    .then(response => response.json())
+                    .then(data => {
+                        progressBar.style.width = data.progress + '%';
+                        if (data.progress >= 100) {
+                            clearInterval(interval);
+                            window.location.href = '/preferences'; // Redirect to preferences page
+                        }
+                    });
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>

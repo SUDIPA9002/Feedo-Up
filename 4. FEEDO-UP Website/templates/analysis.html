@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Analysis Results</h1>
+        {% if message %}
+        <p>{{ message }}</p>
+        {% else %}
+        <div class="pie-chart">
+            <img src="data:image/png;base64,{{ pie_chart_url }}" alt="Sentiment Analysis Pie Chart">
+        </div>
+        <div class="sentiment-summary">
+            <h2>Sentiment Summary</h2>
+            <p>Positive: {{ (sentiments['positive'] / (sentiments['positive'] + sentiments['neutral'] + sentiments['negative']) * 100) | round(2) }}%</p>
+            <p>Neutral: {{ (sentiments['neutral'] / (sentiments['positive'] + sentiments['neutral'] + sentiments['negative']) * 100) | round(2) }}%</p>
+            <p>Negative: {{ (sentiments['negative'] / (sentiments['positive'] + sentiments['neutral'] + sentiments['negative']) * 100) | round(2) }}%</p>
+        </div>
+        <div class="comments">
+            <h2>Comments</h2>
+            <ul>
+                {% for comment in comments %}
+                <li>{{ comment }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="overall-sentiment">
+            <h2>{{ overall_sentiment }}</h2>
+        </div>
+        <button class="back-button" onclick="window.location.href='/preferences'">Back to Preferences</button> {% endif %}
+    </div>
+</body>
+
+</html>

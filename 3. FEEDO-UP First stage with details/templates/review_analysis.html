@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            color: #5a67d8;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #5a67d8;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 18px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background: #fff;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        img {
+            margin: 20px 0;
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #5a67d8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color: #434190;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis Results</h1>
+        <img src="{{ url_for('static', filename='sentiment_pie_chart.png') }}" alt="Sentiment Pie Chart">
+        <h2>Sentiment Percentages:</h2>
+        <ul>
+            {% for sentiment, percentage in analysis.items() %}
+            <li>{{ sentiment }}: {{ percentage }}%</li>
+            {% endfor %}
+        </ul>
+        <h2>Comments:</h2>
+        <ul>
+            {% for comment in comments %}
+            <li>{{ comment }}</li>
+            {% endfor %}
+        </ul>
+        <a class="back-button" href="{{ url_for('index') }}">Back to Home</a>
+    </div>
+</body>
+</html>
