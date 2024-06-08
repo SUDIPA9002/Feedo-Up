@@ -25,11 +25,11 @@ FEEDO _UP is an innovative sentiment analysis tool designed to analyze and extra
 - **Visualization:** Clear and insightful visual representation of sentiment analysis results.
 
 ## Technologies Used
--**Programming Languages:** Python
--**Frameworks:** Flask (for the web application), BeautifulSoup (for web scraping)
--**Natural Language Processing:** NLTK (Natural Language Toolkit)
--**Data Visualization:** Matplotlib, Seaborn
--**Version Control:** Git, GitHub
+-**Programming Languages:** Python.
+-**Frameworks:** Flask (for the web application), BeautifulSoup (for web scraping).
+-**Natural Language Processing:** NLTK (Natural Language Toolkit).
+-**Data Visualization:** Matplotlib, Seaborn.
+-**Version Control:** Git, GitHub.
 
 ## Future Scope
 FEEDO_UP is currently tailored for Flipkart, but future plans include:
