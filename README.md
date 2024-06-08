@@ -1,6 +1,7 @@
 # FEEDO _UP - Sentiment Analysis for Product Reviews
 
 **"Unveiling the Power of Sentiment Analysis in Product Review Exploration"**
+
 Welcome to FEEDO_UP, a pioneering sentiment analysis tool designed to unlock actionable insights from product reviews. As e-commerce continues to grow, understanding customer feedback becomes increasingly vital. FEEDO_UP leverages advanced Natural Language Processing (NLP) techniques to provide a user-friendly platform for analyzing sentiments expressed in product reviews.
 
 ## Table of Contents
