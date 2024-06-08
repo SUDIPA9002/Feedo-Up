@@ -2,7 +2,7 @@
 
 **"Unveiling the Power of Sentiment Analysis in Product Review Exploration"**
 
-Welcome to FEEDO_UP, a pioneering sentiment analysis tool designed to unlock actionable insights from product reviews. As e-commerce continues to grow, understanding customer feedback becomes increasingly vital. FEEDO_UP leverages advanced Natural Language Processing (NLP) techniques to provide a user-friendly platform for analyzing sentiments expressed in product reviews.
+ FEEDO_UP leverages advanced Natural Language Processing (NLP) techniques to provide a user-friendly platform for analyzing sentiments expressed in product reviews.
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -44,22 +44,26 @@ FEEDO_UP is currently tailored for Flipkart, but future plans include:
     git clone https://github.com/SUDIPA9002/feedo_up.git
     cd feedo_up
     ```
-
 2. **Install Dependencies**:
     ```bash
     pip install -r requirements.txt
     ```
-
 3. **Run the Application**:
     ```bash
     python app.py
     ```
-
 4. **Access the Web Interface**:
     Open your browser and go to `http://localhost:5000`.
 
 ## Contributing
-We welcome contributions from the community! Feel free to open issues or submit pull requests to help improve FEEDO _UP.
+We welcome contributions from the community! Feel free to open issues or submit pull requests to help improve FEEDO _UP.To contribute:
+
+1. Fork the repository.
+2. Create a new branch (git checkout -b feature/your-feature-name).
+3. Commit your changes (git commit -m 'Add some feature').
+4. Push to the branch (git push origin feature/your-feature-name).
+5. Create a new Pull Request.
+Please ensure your code follows the project's coding guidelines and includes appropriate tests.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
@@ -67,6 +71,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contact
 For any questions or suggestions, please reach out to us:
 - Sudipa Koner (sudipa.koner492@gmail.com)
-- Ph - 7439457175
 
 ---
